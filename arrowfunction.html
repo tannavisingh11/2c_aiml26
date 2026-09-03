@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+
+<script>
+    // 1. Function Declaration
+    function sum1() {
+        let a = 10;
+        let b = 20;
+        let c = a + b;
+        return c;
+    }
+
+    // 2. Function Expression
+    let sum2 = function() {
+        let a = 10;
+        let b = 20;
+        let c = a + b;
+        return c;
+    };
+
+    // 3. Arrow Function
+    let sum3 = () => {
+        let a = 10;
+        let b = 20;
+        let c = a + b;
+        return c;
+    };
+
+    console.log(sum1());
+    console.log(sum2());
+    console.log(sum3());
+</script>
+
+</body>
+</html>
