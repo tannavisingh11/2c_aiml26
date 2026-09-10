@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Demo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(#87CEEB, #E0F6FF);
+        }
+
+        .mountain {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 45%;
+            background: #4b6584;
+            clip-path: polygon(
+                0 100%, 
+                20% 30%, 
+                35% 70%, 
+                50% 15%, 
+                65% 65%, 
+                80% 25%, 
+                100% 100%
+            );
+        }
+
+        .sun {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #FFD93D;
+            top: 15%;
+            right: 15%;
+        }
+
+        .cloud {
+            position: absolute;
+            font-size: 70px;
+        }
+
+        .cloud1 {
+            top: 20%;
+            left: 10%;
+        }
+
+        .cloud2 {
+            top: 35%;
+            right: 20%;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+        }
+
+        .hero-text p {
+            font-size: 22px;
+            margin-top: 15px;
+        }
+
+        .content {
+            min-height: 100vh;
+            padding: 100px 10%;
+            text-align: center;
+            background: white;
+        }
+
+        .content h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .card {
+            margin: 60px auto;
+            max-width: 600px;
+            padding: 40px;
+            background: #f1f1f1;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <div class="sun"></div>
+
+        <div class="cloud cloud1">☁️</div>
+        <div class="cloud cloud2">☁️</div>
+
+        <div class="mountain"></div>
+
+        <div class="hero-text">
+            <h1>Explore Nature</h1>
+            <p>Scroll down to experience the parallax effect ↓</p>
+        </div>
+
+    </section>
+
+
+    <section class="content">
+
+        <h2>Welcome to the Journey</h2>
+
+        <p>
+            This is an interactive parallax scrolling website.
+            As you scroll, different elements move at different
+            speeds, creating a sense of depth and animation.
+        </p>
+
+        <div class="card">
+            <h2>🌄 Parallax Effect</h2>
+
+            <p>
+                The background, clouds, mountains and text can
+                move independently when the user scrolls.
+            </p>
+        </div>
+
+    </section>
+
+
+    <script>
+
+        window.addEventListener("scroll", function () {
+
+            let scroll = window.scrollY;
+
+            document.querySelector(".sun").style.transform =
+                `translateY(${scroll * 0.3}px)`;
+
+            document.querySelector(".cloud1").style.transform =
+                `translateX(${scroll * 0.5}px)`;
+
+            document.querySelector(".cloud2").style.transform =
+                `translateX(-${scroll * 0.4}px)`;
+
+            document.querySelector(".mountain").style.transform =
+                `translateY(${scroll * 0.15}px)`;
+
+            document.querySelector(".hero-text").style.transform =
+                `translateY(${scroll * 0.7}px)`;
+        });
+
+    </script>
+
+</body>
+</html>
