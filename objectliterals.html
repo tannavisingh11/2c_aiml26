@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let name = "Vikas";
+        let Rollno = 101;
+       let Student = {
+            name , Rollno,
+            display(){
+                console.log(this.name,this.Rollno);
+            }
+       } 
+        console.log(Student.name, Student.Rollno);
+        let n = "stname";
+        let student = {
+           [name] : "Vikas"
+
+        }
+        console.log(Student.stname);
+
+        let n = "stname";
+        let student = {
+        ["first"+ n] : " Vikas"
+        ["last"+ n] : " chaudhary"
+        }
+        console.log(Student.Firstname);
+        console.log(Student.Lastname);
+    </script>
+</body>
+</html>
