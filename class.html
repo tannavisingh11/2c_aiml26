@@ -8,17 +8,16 @@
 <body>
   <script>
     class Student{
-      constructor(name,rollno){
+      constructor(name){
         this.name=name;
-        this.rollno=rollno;
       }
       display(){
-        console.log(this.name, this.rollno);
+        console.log(this.name);
       }
     }
 
-    let student1= new Student("vikas",101);
-    let student2= new Student("sachin",102);
+    let student1= new Student("vikas");
+    let student2= new Student("sachin");
     student1.display();
     student2.display();
   </script>
